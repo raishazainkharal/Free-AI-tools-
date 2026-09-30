@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIKhoj - Sab AI tools ek jagah</title>
+<meta name="description" content="Duniya ke best AI tools ki official links, free AI tools ki list, aur unhe use karne ke aasan guides. Search karein, category chunein, seedha tool kholein.">
+<meta property="og:title" content="AIKhoj - Sab AI tools ek jagah">
+<meta property="og:description" content="AI tools ki directory: chatbot, image, video, voice, coding aur bahut kuch. Free tools alag se.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#EEF2F5;
+  --card:#FFFFFF;
+  --ink:#0D1B2A;
+  --muted:#52606D;
+  --line:#D3DCE4;
+  --blue:#2B59FF;
+  --blue-dark:#1A3FCC;
+  --lime:#CDEF6B;
+  --lime-ink:#2C3B00;
+  --sand:#FFE9B8;
+  --sand-ink:#5B3F00;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Figtree",system-ui,-apple-system,Segoe UI,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","Figtree",sans-serif;line-height:1.1;margin:0;letter-spacing:-0.02em}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.4rem;text-decoration:none;letter-spacing:-0.03em}
+.brand b{color:var(--blue)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{text-decoration:none;padding:8px 14px;border-radius:999px;font-weight:500;font-size:.95rem}
+.nav a:hover{background:#dfe6ec}
+.nav a.cta{background:var(--ink);color:#fff}
+.nav a.cta:hover{background:var(--blue)}
+
+/* hero */
+.hero{padding:44px 0 34px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;max-width:14ch}
+.hero p{max-width:52ch;color:var(--muted);font-size:1.1rem;margin:16px 0 26px}
+.searchbox{position:relative;max-width:720px}
+.searchbox input{width:100%;padding:20px 22px 20px 56px;border-radius:18px;border:2px solid var(--ink);background:var(--card);font-size:1.15rem;box-shadow:6px 6px 0 var(--ink)}
+.searchbox input::placeholder{color:#7b8794}
+.searchbox svg{position:absolute;left:20px;top:50%;transform:translateY(-50%);width:22px;height:22px;stroke:var(--ink)}
+.hint{margin-top:18px;color:var(--muted);font-size:.92rem}
+.hint kbd{background:var(--card);border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 7px;font-size:.85rem}
+
+/* directory layout */
+.dir{display:grid;grid-template-columns:230px 1fr;gap:34px;padding:20px 0 60px;align-items:start}
+.side{position:sticky;top:16px}
+.side h2{font-size:1rem;margin-bottom:10px;color:var(--muted);font-family:"Figtree",sans-serif;font-weight:600;letter-spacing:0}
+.cats{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:2px}
+.cats button{width:100%;text-align:left;background:none;border:0;padding:9px 12px;border-radius:10px;cursor:pointer;display:flex;justify-content:space-between;font-weight:500}
+.cats button:hover{background:#dfe6ec}
+.cats button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.cats span{opacity:.6;font-weight:400}
+.seg{display:flex;background:#dfe6ec;border-radius:12px;padding:4px;gap:4px}
+.seg button{flex:1;border:0;background:none;padding:8px 6px;border-radius:9px;cursor:pointer;font-weight:500;font-size:.9rem}
+.seg button[aria-pressed="true"]{background:var(--card);box-shadow:0 1px 3px rgba(13,27,42,.15)}
+
+.resulthead{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px;flex-wrap:wrap}
+.resulthead h2{font-size:1.5rem}
+.resulthead select{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.list{display:flex;flex-direction:column;gap:10px}
+.tool{display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;text-decoration:none;transition:border-color .15s,transform .15s}
+.tool:hover{border-color:var(--blue);transform:translateX(3px)}
+.mono{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.5rem;color:#fff}
+.tool h3{font-size:1.15rem;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tool p{margin:3px 0 0;color:var(--muted);font-size:.95rem}
+.tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.tag{font-size:.78rem;padding:2px 9px;border-radius:999px;background:#E6ECF1;color:var(--muted)}
+.badge{font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.badge.free{background:var(--lime);color:var(--lime-ink)}
+.badge.freemium{background:var(--sand);color:var(--sand-ink)}
+.badge.paid{background:#E6ECF1;color:var(--ink)}
+.badge.new{background:var(--blue);color:#fff}
+.open{font-weight:600;color:var(--blue);white-space:nowrap;font-size:.95rem}
+.empty{background:var(--card);border:2px dashed var(--line);border-radius:var(--radius);padding:34px;text-align:center;color:var(--muted)}
+.empty button{margin-top:12px;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 20px;cursor:pointer}
+
+/* articles */
+.articles{background:var(--ink);color:#fff;padding:64px 0}
+.articles h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:8px}
+.articles .sub{color:#B9C6D2;margin:0 0 30px;max-width:56ch}
+.alist{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.art{display:block;text-decoration:none;padding:20px 0;border-top:1px solid #2B3D50}
+.art:hover h3{color:var(--lime)}
+.art .meta{font-size:.85rem;color:#8DA0B2;margin-bottom:6px}
+.art h3{font-size:1.35rem;transition:color .15s}
+.art p{margin:8px 0 0;color:#B9C6D2;font-size:.97rem}
+
+/* article page */
+.page{max-width:720px;margin:0 auto;padding:30px 20px 70px}
+.back{display:inline-block;margin-bottom:24px;font-weight:600;color:var(--blue);text-decoration:none}
+.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:10px}
+.page .meta{color:var(--muted);margin-bottom:28px}
+.prose{font-size:1.08rem;line-height:1.8}
+.prose h2{font-size:1.5rem;margin:34px 0 10px}
+.prose ul,.prose ol{padding-left:22px}
+.prose li{margin:6px 0}
+.prose .note{background:var(--sand);color:var(--sand-ink);border-radius:12px;padding:14px 16px;margin:22px 0}
+.prose .prompt{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:10px;padding:12px 16px;margin:14px 0;font-weight:500}
+.related{margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.related h2{font-size:1.3rem;margin-bottom:14px}
+
+/* submit + footer */
+.submit{padding:60px 0}
+.submit .box{background:var(--card);border:2px solid var(--ink);border-radius:20px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px;box-shadow:6px 6px 0 var(--ink)}
+.submit h2{font-size:2rem;margin-bottom:8px}
+.submit p{color:var(--muted);margin:0}
+form{display:grid;gap:10px}
+label{font-size:.88rem;font-weight:600}
+input[type=text],input[type=url],select.f,textarea{width:100%;padding:11px 12px;border:1px solid #b9c5d0;border-radius:10px;background:#fff}
+textarea{min-height:76px;resize:vertical}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:12px;padding:13px 18px;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--blue-dark)}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.9rem}
+footer p{margin:4px 0;max-width:80ch}
+
+[hidden]{display:none!important}
+
+@media (max-width:820px){
+  .dir{grid-template-columns:1fr;gap:16px}
+  .side{position:static}
+  .cats{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:6px}
+  .cats button{white-space:nowrap;width:auto;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px}
+  .alist{grid-template-columns:1fr}
+  .submit .box{grid-template-columns:1fr}
+  .tool{grid-template-columns:44px 1fr}
+  .mono{width:44px;height:44px;font-size:1.25rem}
+  .open{grid-column:2}
+  .searchbox input{box-shadow:4px 4px 0 var(--ink)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     SITE KA SETTING - yahan sirf apna naam aur email badlein
+     ============================================================ -->
+
+<div id="home">
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="#" id="brand"></a>
+      <nav class="nav" aria-label="Menu">
+        <a href="#tools">Tools</a>
+        <a href="#articles">Guides</a>
+        <a href="#submit" class="cta">Tool bhejein</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Sab AI tools, ek jagah.</h1>
+      <p>Chatbot, image, video, voice, coding aur aur bhi kaafi. Har tool ka official link, saaf hindi description, aur free options alag se.</p>
+      <div class="searchbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Kaunsa tool chahiye? jaise: photo, video, awaaz, coding" aria-label="Tool khojein" autocomplete="off">
+      </div>
+      <div class="hint">Search ke liye <kbd>/</kbd> dabayein. <span id="count"></span></div>
+    </section>
+  </div>
+
+  <main class="wrap" id="tools">
+    <div class="dir">
+      <aside class="side" aria-label="Filter">
+        <h2>Category</h2>
+        <ul class="cats" id="cats"></ul>
+        <h2>Price</h2>
+        <div class="seg" id="price" role="group" aria-label="Price filter">
+          <button data-p="all" aria-pressed="true">Sab</button>
+          <button data-p="free" aria-pressed="false">Free plan</button>
+        </div>
+      </aside>
+
+      <section aria-live="polite">
+        <div class="resulthead">
+          <h2 id="rtitle">Sab tools</h2>
+          <select id="sort" aria-label="Sort">
+            <option value="featured">Popular pehle</option>
+            <option value="az">A se Z</option>
+            <option value="new">Naye pehle</option>
+          </select>
+        </div>
+        <div class="list" id="list"></div>
+      </section>
+    </div>
+  </main>
+
+  <section class="articles" id="articles">
+    <div class="wrap">
+      <h2>Guides: AI ko use kaise karein</h2>
+      <p class="sub">Seedhe steps, asli examples. Har guide ke end mein us mein bataye gaye tools ke links milenge.</p>
+      <div class="alist" id="alist"></div>
+    </div>
+  </section>
+
+  <section class="submit wrap" id="submit">
+    <div class="box">
+      <div>
+        <h2>Aapka tool list mein nahi hai?</h2>
+        <p>Tool ka naam aur official link bhejein. Hum dekh kar list mein jodenge. Sirf official links, crack ya pirated version nahi.</p>
+      </div>
+      <form id="form">
+        <div><label for="fn">Tool ka naam</label><input id="fn" type="text" required></div>
+        <div><label for="fu">Official link</label><input id="fu" type="url" placeholder="https://" required></div>
+        <div><label for="fd">Ye kya karta hai (ek line mein)</label><textarea id="fd" required></textarea></div>
+        <button class="btn" type="submit">Email se bhejein</button>
+      </form>
+    </div>
+  </section>
+</div>
+
+<div id="articlePage" hidden>
+  <div class="wrap"><header class="top"><a class="brand" href="#" id="brand2"></a></header></div>
+  <article class="page" id="apage"></article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p id="fnote"></p>
+    <p>Sabhi tool naam aur brand unki apni companies ke hain. Is site ka un se koi rishta nahi hai, jab tak alag se na likha ho. Price aur free limits badalte rehte hain, isliye kharidne se pehle official site par check karein.</p>
+    <p>Kuch links affiliate ho sakte hain. Isse aap ko koi extra kharcha nahi lagta.</p>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   SETTING (yahan badlein)
+   ===================================================================== */
+const SITE_NAME  = "AIKhoj";
+const SITE_EMAIL = "aapka-email@example.com";   // <-- apna email likhein (tool submit form yahin aayega)
+
+/* =====================================================================
+   TOOLS KI LIST
+   Naya tool jodne ke liye kisi ek line ko copy karke niche paste karein
+   aur naam, link, description badal dein.
+   Hatane ke liye us poori line ko delete kar dein.
+
+   cat      : category ka naam (jo likhenge wahi category ban jayegi)
+   price    : "free"  = poora free
+              "freemium" = free plan + paid plan
+              "paid"  = sirf paid
+   featured : true = popular pehle dikhega
+   isNew    : true = "Naya" badge dikhega
+   ===================================================================== */
+const TOOLS = [
+  // ---------- Chatbot ----------
+  {id:"chatgpt",   name:"ChatGPT",    url:"https://chatgpt.com",              cat:"Chatbot", price:"freemium", featured:true,  desc:"Sawal poochein, likhwayein, samjhein, translate karayein. Sabse zyada use hone wala AI chatbot.", tags:["writing","padhai","coding"]},
+  {id:"claude",    name:"Claude",     url:"https://claude.ai",                cat:"Chatbot", price:"freemium", featured:true,  desc:"Lambe documents padhne, saaf likhne aur coding mein madad karne wala AI assistant.", tags:["writing","documents","coding"]},
+  {id:"gemini",    name:"Gemini",     url:"https://gemini.google.com",        cat:"Chatbot", price:"freemium", featured:true,  desc:"Google ka AI. Google account ke saath chalta hai, aur text, photo dono samajhta hai.", tags:["google","photo","padhai"]},
+  {id:"copilot",   name:"Microsoft Copilot", url:"https://copilot.microsoft.com", cat:"Chatbot", price:"freemium", featured:false, desc:"Microsoft ka AI assistant. Browser mein seedha khulta hai, Windows aur Office ke saath bhi judta hai.", tags:["microsoft","office"]},
+  {id:"deepseek",  name:"DeepSeek",   url:"https://www.deepseek.com",         cat:"Chatbot", price:"free",     featured:false, desc:"Chinese AI lab ka chatbot. Reasoning aur coding sawalon ke liye jaana jata hai.", tags:["reasoning","coding"]},
+  {id:"perplexity",name:"Perplexity", url:"https://www.perplexity.ai",        cat:"Search & Research", price:"freemium", featured:true, desc:"Google ki jagah AI se search. Jawab ke saath source links bhi deta hai.", tags:["search","research"]},
+  {id:"notebooklm",name:"NotebookLM", url:"https://notebooklm.google",        cat:"Search & Research", price:"freemium", featured:false, isNew:true, desc:"Apni PDF ya notes daalein, phir unhi se sawal poochein ya summary aur audio overview banayein.", tags:["padhai","pdf","summary"]},
+
+  // ---------- Image ----------
+  {id:"midjourney",name:"Midjourney", url:"https://www.midjourney.com",       cat:"Image", price:"paid",     featured:true,  desc:"Bahut khoobsurat artistic images. Text likh kar tasveer banayein.", tags:["art","design"]},
+  {id:"leonardo",  name:"Leonardo AI",url:"https://leonardo.ai",              cat:"Image", price:"freemium", featured:false, desc:"Game art, character aur design ke liye image generator. Roz kuch free credits milte hain.", tags:["art","game","design"]},
+  {id:"ideogram",  name:"Ideogram",   url:"https://ideogram.ai",              cat:"Image", price:"freemium", featured:false, desc:"Image ke andar text (poster, logo, thumbnail) sahi likhne mein achha.", tags:["poster","logo","text"]},
+  {id:"firefly",   name:"Adobe Firefly", url:"https://firefly.adobe.com",     cat:"Image", price:"freemium", featured:false, desc:"Adobe ka image AI. Photo edit, background badalna aur nayi images banana.", tags:["photo-edit","design"]},
+  {id:"canva",     name:"Canva",      url:"https://www.canva.com",            cat:"Design", price:"freemium", featured:true, desc:"Poster, reel cover, presentation aur logo banane ka aasan tool, AI features ke saath.", tags:["poster","social media"]},
+  {id:"removebg",  name:"remove.bg",  url:"https://www.remove.bg",            cat:"Design", price:"freemium", featured:false, desc:"Photo ka background ek click mein hatayein.", tags:["photo","background"]},
+
+  // ---------- Video ----------
+  {id:"runway",    name:"Runway",     url:"https://runwayml.com",             cat:"Video", price:"freemium", featured:true,  desc:"Text ya photo se video banayein aur video edit karein.", tags:["text-to-video","edit"]},
+  {id:"pika",      name:"Pika",       url:"https://pika.art",                 cat:"Video", price:"freemium", featured:false, desc:"Chhote AI video clips aur effects banane ka tool.", tags:["clips","effects"]},
+  {id:"luma",      name:"Luma Dream Machine", url:"https://lumalabs.ai",      cat:"Video", price:"freemium", featured:false, desc:"Text ya image se realistic video clips.", tags:["text-to-video"]},
+  {id:"capcut",    name:"CapCut",     url:"https://www.capcut.com",           cat:"Video", price:"freemium", featured:true,  desc:"Reels aur shorts edit karne ka popular editor. Auto captions aur AI effects ke saath.", tags:["reels","captions","edit"]},
+
+  // ---------- Voice & Music ----------
+  {id:"elevenlabs",name:"ElevenLabs", url:"https://elevenlabs.io",            cat:"Voice & Music", price:"freemium", featured:true, desc:"Text ko natural awaaz mein badlein. Kai bhashaon ka support.", tags:["voiceover","text-to-speech"]},
+  {id:"suno",      name:"Suno",       url:"https://suno.com",                 cat:"Voice & Music", price:"freemium", featured:true, desc:"Sirf batayein kaisa gaana chahiye, AI dhun aur awaaz ke saath poora gaana banata hai.", tags:["gaana","music"]},
+  {id:"otter",     name:"Otter",      url:"https://otter.ai",                 cat:"Voice & Music", price:"freemium", featured:false, desc:"Meeting ya lecture ki awaaz ko text mein likhta hai aur summary deta hai.", tags:["meeting","transcribe"]},
+
+  // ---------- Coding ----------
+  {id:"cursor",    name:"Cursor",     url:"https://cursor.com",               cat:"Coding", price:"freemium", featured:true,  desc:"AI ke saath code likhne wala editor. Poore project ko samajh kar madad karta hai.", tags:["editor","developer"]},
+  {id:"copilotgh", name:"GitHub Copilot", url:"https://github.com/features/copilot", cat:"Coding", price:"freemium", featured:false, desc:"Code likhte waqt suggestions deta hai. VS Code jaise editors mein chalta hai.", tags:["developer","autocomplete"]},
+  {id:"replit",    name:"Replit",     url:"https://replit.com",               cat:"Coding", price:"freemium", featured:false, desc:"Browser mein hi code likhein, chalayein aur AI se app banwayein. Kuch install nahi karna.", tags:["beginner","apps"]},
+  {id:"huggingface",name:"Hugging Face", url:"https://huggingface.co",        cat:"Coding", price:"free",     featured:false, desc:"Open-source AI models aur demos ka bada ghar. Kai models yahin try kar sakte hain.", tags:["models","open-source"]},
+
+  // ---------- Writing & Kaam ----------
+  {id:"grammarly", name:"Grammarly",  url:"https://www.grammarly.com",        cat:"Writing & Kaam", price:"freemium", featured:false, desc:"English ki galtiyan sudharta hai aur likhne ka style behtar banata hai.", tags:["english","email"]},
+  {id:"deepl",     name:"DeepL",      url:"https://www.deepl.com",            cat:"Writing & Kaam", price:"freemium", featured:false, desc:"Bahut natural translation. Kai languages ke beech.", tags:["translate"]},
+  {id:"notion",    name:"Notion AI",  url:"https://www.notion.com",           cat:"Writing & Kaam", price:"freemium", featured:false, desc:"Notes, tasks aur documents ke saath AI. Summary aur likhne mein madad.", tags:["notes","kaam"]},
+  {id:"gamma",     name:"Gamma",      url:"https://gamma.app",                cat:"Writing & Kaam", price:"freemium", featured:false, desc:"Topic likhein, AI kuch hi second mein presentation ya website bana deta hai.", tags:["ppt","presentation"]}
+];
+
+/* =====================================================================
+   GUIDES / ARTICLES
+   Naya article jodne ke liye kisi ek article ({ se } tak) ko copy karein,
+   id (chhota, bina space ka), title aur body badal dein.
+   tools: us article mein jo tool bataye gaye unke id (upar TOOLS se).
+   Body mein HTML likh sakte hain: <h2>, <p>, <ul><li>, <ol><li>,
+   <div class="prompt">...</div>, <div class="note">...</div>
+   ===================================================================== */
+const ARTICLES = [
+{
+  id:"chatgpt-kaise-use-karein",
+  title:"ChatGPT kaise use karein: bilkul shuru se",
+  date:"2026-09-01", read:"5 min",
+  summary:"Account banane se le kar achha jawab paane tak, seedhe steps.",
+  tools:["chatgpt","claude","gemini"],
+  body:`
+<p>ChatGPT ek chatbot hai jisse aap insaan ki tarah baat kar sakte hain. Aap likhte hain, wo jawab deta hai. Yahi tareeka Claude aur Gemini par bhi chalta hai.</p>
+<h2>Shuru karne ke steps</h2>
+<ol>
+<li>Website kholein aur Google ya email se sign up karein.</li>
+<li>Neeche ke box mein apna sawal ya kaam likhein.</li>
+<li>Jawab aane ke baad wahi chat mein aage poochte rahein. Wo pichli baat yaad rakhta hai.</li>
+</ol>
+<h2>Achha jawab kaise milta hai</h2>
+<p>Jitna saaf likhenge, utna behtar jawab milega. Teen cheezein batayein: aap kaun hain, kya chahiye, aur kaisa format chahiye.</p>
+<div class="prompt">Main class 10 ka student hun. Mujhe photosynthesis 5 aasan lines mein samjhao, Hindi mein.</div>
+<div class="prompt">Meri dukaan ke liye Diwali sale ka WhatsApp message likho, chhota aur friendly.</div>
+<h2>Kaam ki baatein</h2>
+<ul>
+<li>Jawab pasand na aaye to bolein: "aur chhota karo" ya "aur simple likho".</li>
+<li>Zaroori cheezein (dawai, kanoon, paisa) hamesha kisi expert se bhi check karein. AI kabhi galat bhi ho sakta hai.</li>
+<li>Apni private baatein, password ya bank details kabhi na likhein.</li>
+</ul>
+<div class="note">Free plan mein roz ki limit hoti hai. Limit ya features badalte rehte hain, official site par dekh lein.</div>`
+},
+{
+  id:"free-ai-tools-list",
+  title:"Free AI tools: jinke free plan se kaam chal jata hai",
+  date:"2026-09-05", read:"4 min",
+  summary:"Chatbot, image, video aur awaaz ke tools jinme bina paise diye shuru kar sakte hain.",
+  tools:["chatgpt","gemini","perplexity","canva","capcut","huggingface","removebg"],
+  body:`
+<p>Zyada tar AI tools "freemium" hote hain: free plan mein limit hoti hai, zyada use ke liye paisa dena padta hai. Neeche wo tools hain jinka free plan roz ke kaam ke liye aksar kaafi rehta hai.</p>
+<h2>Likhna aur sawal-jawab</h2>
+<ul>
+<li><b>ChatGPT, Gemini, Claude</b>: teeno mein free plan hai. Roz ki limit ke andar likhna, samjhna aur translate karna ho sakta hai.</li>
+<li><b>Perplexity</b>: research ke liye, source links ke saath jawab.</li>
+</ul>
+<h2>Photo aur design</h2>
+<ul>
+<li><b>Canva</b>: poster, thumbnail, reel cover ke free templates.</li>
+<li><b>remove.bg</b>: background hatane ke liye free preview quality.</li>
+</ul>
+<h2>Video</h2>
+<ul>
+<li><b>CapCut</b>: reels edit karne ka free editor, auto captions ke saath.</li>
+</ul>
+<h2>Seekhna aur experiment</h2>
+<ul>
+<li><b>Hugging Face</b>: bahut saare AI models ke free demo.</li>
+</ul>
+<div class="note">Free ka matlab hamesha hamesha free nahi. Companies apne plans badalti rehti hain. Sign up se pehle pricing page zaroor dekhein.</div>`
+},
+{
+  id:"ai-se-image-banayein",
+  title:"AI se image kaise banayein: prompt likhne ka tareeka",
+  date:"2026-09-10", read:"4 min",
+  summary:"Achhi tasveer ke liye prompt mein kya-kya likhna chahiye, examples ke saath.",
+  tools:["ideogram","leonardo","firefly","canva"],
+  body:`
+<p>AI image tool mein aap likh kar batate hain ki kaisi tasveer chahiye. Is likhe hue text ko <b>prompt</b> kehte hain.</p>
+<h2>Prompt ke 4 hisse</h2>
+<ol>
+<li><b>Kya hai</b>: chai ki dukaan, ek billi, ek gaon.</li>
+<li><b>Style</b>: photo jaisa, cartoon, painting, 3D.</li>
+<li><b>Roshni aur rang</b>: subah ki dhoop, neon lights, halke rang.</li>
+<li><b>Kaisa lage</b>: shaant, mazedaar, badi aur wide shot.</li>
+</ol>
+<h2>Examples</h2>
+<div class="prompt">A small chai stall on a rainy street, warm yellow light, realistic photo, cinematic</div>
+<div class="prompt">Cartoon style orange cat wearing sunglasses, flat colors, white background</div>
+<h2>Tips</h2>
+<ul>
+<li>Pehli baar mein perfect nahi aata. 3-4 baar thoda badal kar try karein.</li>
+<li>Poster ya thumbnail par text chahiye to Ideogram jaisa tool try karein.</li>
+<li>Kisi asli insaan, mashhoor character ya brand ki nakal na banayein. Apne khud ke idea use karein.</li>
+<li>Business mein image use karne se pehle tool ke terms mein commercial use ka rule padh lein.</li>
+</ul>`
+},
+{
+  id:"reels-ke-liye-ai",
+  title:"Reels aur shorts ke liye AI tools ka use",
+  date:"2026-09-15", read:"4 min",
+  summary:"Script se le kar captions aur awaaz tak, poora workflow.",
+  tools:["chatgpt","capcut","elevenlabs","canva","suno"],
+  body:`
+<p>Ek reel banane ke 4 kaam hote hain: idea, script, video edit, aur cover. Har kaam mein AI time bacha sakta hai.</p>
+<h2>Step by step</h2>
+<ol>
+<li><b>Idea aur script</b>: chatbot se poochein.
+<div class="prompt">Mujhe 30 second ki reel ka script do: "ghar par paisa bachane ke 3 tareeke". Hindi mein, pehle 3 second mein hook.</div></li>
+<li><b>Video</b>: apna khud ka video shoot karein ya apne saamaan ke clips use karein.</li>
+<li><b>Edit aur captions</b>: CapCut mein auto captions lagayein.</li>
+<li><b>Voiceover (agar chahiye)</b>: ElevenLabs jaise tool se text ko awaaz banayein.</li>
+<li><b>Cover</b>: Canva mein reel cover banayein.</li>
+</ol>
+<h2>Dhyan rakhein</h2>
+<ul>
+<li>Music sirf wahi lagayein jiska use karne ka haq aap ke paas ho. Platform ki apni music library ya AI se banaya music (tool ke terms ke andar) safe rehta hai.</li>
+<li>Dusron ke videos ko bina ijazat download karke apne naam se na daalein.</li>
+<li>Kuch platforms AI se bane content par label lagane ko kehte hain. Unke rules dekh lein.</li>
+</ul>`
+},
+{
+  id:"padhai-mein-ai",
+  title:"Padhai mein AI ka sahi use: students ke liye",
+  date:"2026-09-20", read:"4 min",
+  summary:"AI se samjhein, copy nahi. Notes, doubt aur revision ke tareeke.",
+  tools:["notebooklm","gemini","chatgpt","perplexity"],
+  body:`
+<p>AI ek achha teacher bhi ban sakta hai, agar aap use jawab likhwane ki jagah samjhane ke liye use karein.</p>
+<h2>Kaam ke tareeke</h2>
+<ul>
+<li><b>Doubt clear karna</b>: 
+<div class="prompt">Newton ka teesra niyam ek rozmarra ke example se samjhao. Phir mujhse 3 sawal poochho.</div></li>
+<li><b>Apne notes se padhna</b>: NotebookLM mein apni PDF daalein, phir usi se sawal poochein ya summary banwayein.</li>
+<li><b>Revision</b>: chapter ke 10 MCQ banwayein aur khud solve karein.</li>
+<li><b>Research</b>: Perplexity se source links ke saath jawab lein, phir links khud kholkar check karein.</li>
+</ul>
+<h2>Kya na karein</h2>
+<ul>
+<li>Assignment poora copy karke na jama karein. School aur college ise pakad lete hain aur usse seekhna bhi nahi hota.</li>
+<li>AI ke jawab ko bina check kiye sach na maanein. Wo confident lagte hue bhi galat ho sakta hai. Book ya teacher se milaayein.</li>
+</ul>`
+},
+{
+  id:"apna-ai-business",
+  title:"Chhote business mein AI ke 5 aasan use",
+  date:"2026-09-25", read:"4 min",
+  summary:"Dukaan ya online business ke liye kaam ki cheezein jo aaj hi shuru ho sakti hain.",
+  tools:["chatgpt","canva","removebg","deepl","gamma"],
+  body:`
+<p>Bade setup ki zaroorat nahi. In 5 kaamon se roz ka time bach sakta hai.</p>
+<ol>
+<li><b>Product description</b>: apne saamaan ke 3-4 points dein aur chatbot se achha description likhwayein.</li>
+<li><b>Photo saaf karna</b>: remove.bg se background hatayein, phir Canva mein poster banayein.</li>
+<li><b>Customer messages</b>: aam sawalon ke jawab (delivery, price, return) ka template bana lein.</li>
+<li><b>Translation</b>: DeepL se message ya listing dusri bhasha mein karein.</li>
+<li><b>Presentation</b>: Gamma se investor ya client ke liye chhota deck.</li>
+</ol>
+<div class="note">Customer ka private data (phone, address) kisi bhi AI tool mein na daalein jab tak aap us tool ki privacy policy na samajh lein. Jo bhi AI ne likha, bhejne se pehle khud padh lein.</div>`
+}
+];
+
+/* =====================================================================
+   NEECHE KA CODE BADALNE KI ZAROORAT NAHI
+   ===================================================================== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const PRICE_LABEL = {free:"Free", freemium:"Free plan + Paid", paid:"Paid"};
+const PALETTE = ["#2B59FF","#0F766E","#B4236B","#C2410C","#6D28D9","#0E7490","#4D7C0F","#9F1239","#1D4ED8","#A16207"];
+const state = {q:"", cat:"Sab", price:"all", sort:"featured"};
+
+function colorFor(name){let h=0;for(const c of name)h=(h*31+c.charCodeAt(0))>>>0;return PALETTE[h%PALETTE.length]}
+function safeUrl(u){return /^https?:\/\//i.test(u)?u:"#"}
+function fmtDate(d){try{return new Date(d).toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"})}catch(e){return d}}
+
+function categories(){
+  const map = {};
+  TOOLS.forEach(t => map[t.cat] = (map[t.cat]||0)+1);
+  return Object.entries(map).sort((a,b)=>b[1]-a[1]);
+}
+
+function renderCats(){
+  const items = [["Sab", TOOLS.length], ...categories()];
+  $("#cats").innerHTML = items.map(([c,n]) =>
+    `<li><button data-c="${esc(c)}" aria-pressed="${state.cat===c}">${esc(c)} <span>${n}</span></button></li>`
+  ).join("");
+}
+
+function filtered(){
+  const q = state.q.trim().toLowerCase();
+  let r = TOOLS.filter(t => {
+    if(state.cat!=="Sab" && t.cat!==state.cat) return false;
+    if(state.price==="free" && t.price==="paid") return false;
+    if(!q) return true;
+    const hay = [t.name,t.desc,t.cat,...(t.tags||[]),PRICE_LABEL[t.price]].join(" ").toLowerCase();
+    return q.split(/\s+/).every(w => hay.includes(w));
+  });
+  if(state.sort==="az") r.sort((a,b)=>a.name.localeCompare(b.name));
+  else if(state.sort==="new") r.sort((a,b)=>(b.isNew?1:0)-(a.isNew?1:0)||a.name.localeCompare(b.name));
+  else r.sort((a,b)=>(b.featured?1:0)-(a.featured?1:0)||a.name.localeCompare(b.name));
+  return r;
+}
+
+function renderList(){
+  const r = filtered();
+  $("#rtitle").textContent = (state.cat==="Sab" ? "Sab tools" : state.cat) + " (" + r.length + ")";
+  if(!r.length){
+    $("#list").innerHTML = `<div class="empty"><p><b>Koi tool nahi mila.</b><br>Dusra shabd try karein, ya filter hata dein.</p><button id="reset">Filter hatayein</button></div>`;
+    return;
+  }
+  $("#list").innerHTML = r.map(t => `
+    <a class="tool" href="${esc(safeUrl(t.url))}" target="_blank" rel="noopener noreferrer">
+      <div class="mono" style="background:${colorFor(t.name)}" aria-hidden="true">${esc(t.name.trim()[0].toUpperCase())}</div>
+      <div>
+        <h3>${esc(t.name)}
+          <span class="badge ${esc(t.price)}">${esc(PRICE_LABEL[t.price]||"")}</span>
+          ${t.isNew?'<span class="badge new">Naya</span>':''}
+        </h3>
+        <p>${esc(t.desc)}</p>
+        <div class="tags"><span class="tag">${esc(t.cat)}</span>${(t.tags||[]).map(g=>`<span class="tag">${esc(g)}</span>`).join("")}</div>
+      </div>
+      <span class="open">Official site kholein</span>
+    </a>`).join("");
+}
+
+function renderArticles(){
+  $("#alist").innerHTML = ARTICLES.map(a => `
+    <a class="art" href="#/guide/${esc(a.id)}">
+      <div class="meta">${esc(fmtDate(a.date))}, ${esc(a.read)} padhne mein</div>
+      <h3>${esc(a.title)}</h3>
+      <p>${esc(a.summary)}</p>
+    </a>`).join("");
+}
+
+function showArticle(id){
+  const a = ARTICLES.find(x => x.id===id);
+  if(!a){location.hash="";return}
+  const rel = (a.tools||[]).map(i => TOOLS.find(t=>t.id===i)).filter(Boolean);
+  $("#apage").innerHTML = `
+    <a class="back" href="#articles">Sab guides par wapas</a>
+    <h1>${esc(a.title)}</h1>
+    <div class="meta">${esc(fmtDate(a.date))}, ${esc(a.read)} padhne mein</div>
+    <div class="prose">${a.body}</div>
+    ${rel.length?`<div class="related"><h2>Is guide ke tools</h2><div class="list">${rel.map(t=>`
+      <a class="tool" href="${esc(safeUrl(t.url))}" target="_blank" rel="noopener noreferrer">
+        <div class="mono" style="background:${colorFor(t.name)}" aria-hidden="true">${esc(t.name.trim()[0].toUpperCase())}</div>
+        <div><h3>${esc(t.name)} <span class="badge ${esc(t.price)}">${esc(PRICE_LABEL[t.price]||"")}</span></h3><p>${esc(t.desc)}</p></div>
+        <span class="open">Kholein</span></a>`).join("")}</div></div>`:""}`;
+  document.title = a.title + " - " + SITE_NAME;
+  $("#home").hidden = true;
+  $("#articlePage").hidden = false;
+  window.scrollTo(0,0);
+}
+
+function route(){
+  const m = location.hash.match(/^#\/guide\/(.+)$/);
+  if(m){showArticle(decodeURIComponent(m[1]));return}
+  $("#articlePage").hidden = true;
+  $("#home").hidden = false;
+  document.title = SITE_NAME + " - Sab AI tools ek jagah";
+  const id = location.hash.slice(1);
+  if(id && document.getElementById(id)) document.getElementById(id).scrollIntoView();
+}
+
+function update(){renderCats();renderList()}
+
+/* events */
+$("#q").addEventListener("input", e => {state.q=e.target.value;renderList()});
+$("#sort").addEventListener("change", e => {state.sort=e.target.value;renderList()});
+$("#cats").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  state.cat = b.dataset.c; update();
+});
+$("#price").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  state.price = b.dataset.p;
+  document.querySelectorAll("#price button").forEach(x => x.setAttribute("aria-pressed", x===b));
+  renderList();
+});
+$("#list").addEventListener("click", e => {
+  if(e.target.id==="reset"){
+    state.q="";state.cat="Sab";state.price="all";$("#q").value="";
+    document.querySelectorAll("#price button").forEach(x => x.setAttribute("aria-pressed", x.dataset.p==="all"));
+    update();
+  }
+});
+document.addEventListener("keydown", e => {
+  if(e.key==="/" && !/input|textarea|select/i.test(document.activeElement.tagName)){e.preventDefault();$("#q").focus()}
+});
+$("#form").addEventListener("submit", e => {
+  e.preventDefault();
+  const n=$("#fn").value.trim(), u=$("#fu").value.trim(), d=$("#fd").value.trim();
+  const body = "Tool: "+n+"\nLink: "+u+"\nKya karta hai: "+d;
+  location.href = "mailto:"+SITE_EMAIL+"?subject="+encodeURIComponent("Naya tool: "+n)+"&body="+encodeURIComponent(body);
+});
+window.addEventListener("hashchange", route);
+
+/* start */
+document.querySelectorAll(".brand").forEach(b => {b.innerHTML = esc(SITE_NAME.slice(0,-3))+"<b>"+esc(SITE_NAME.slice(-3))+"</b>"});
+$("#count").textContent = TOOLS.length + " tools, " + ARTICLES.length + " guides.";
+$("#fnote").innerHTML = "<b>"+esc(SITE_NAME)+"</b>: AI tools ki directory. Har link tool ki official site par jaata hai.";
+renderArticles();
+update();
+route();
+</script>
+</body>
+</html>
